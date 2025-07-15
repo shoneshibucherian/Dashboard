@@ -1,0 +1,29 @@
+uri is: 'mongodb://admin:neepodapati@149.165.155.201:27017/admin'
+uri is mongodb://admin:neepodapati@149.165.155.201:27017/admin
+ * Serving Flask app 'modified_serve'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.103.186:5000
+[33mPress CTRL+C to quit[0m
+<class 'str'>
+Date and Time: 2025-07-08 04:48:44.507000
+<class 'str'>
+Date and Time: 2025-07-15 04:48:44.507000
+1d 1d
+2025-07-08T04:48:44 2025-07-15T04:48:44
+hours 168.0
+149.165.173.42 - - [15/Jul/2025 04:48:45] "GET /key_show?from=1751950124507&time=1d&to=1752554924507 HTTP/1.1" 200 -
+149.165.173.42 - - [15/Jul/2025 04:48:45] "GET /time_of_day?end=2025-07-08&start=2025-06-24 HTTP/1.1" 200 -
+<class 'str'>
+Date and Time: 2025-07-08 04:48:44.507000
+<class 'str'>
+Date and Time: 2025-07-15 04:48:44.507000
+1d 1d
+2025-07-08T04:48:44 2025-07-15T04:48:44
+hours 168.0
+149.165.173.42 - - [15/Jul/2025 04:48:46] "GET /vlan_show?from=1751950124507&time=1d&to=1752554924507 HTTP/1.1" 200 -
+149.165.173.42 - - [15/Jul/2025 04:48:46] "GET /bandwidth_vs_vlan HTTP/1.1" 200 -
+<pymongo.synchronous.command_cursor.CommandCursor object at 0x7f4bfdd12f00>
+149.165.173.42 - - [15/Jul/2025 04:48:46] "GET /bandwidth_vs_key_ HTTP/1.1" 200 -

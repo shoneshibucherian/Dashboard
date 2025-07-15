@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  grafana:
+    image: grafana/grafana-enterprise:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Install Infinity at launch
+      - GF_INSTALL_PLUGINS=yesoreyeram-infinity-datasource  # :contentReference[oaicite:0]{index=0}
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      # Provisioning folders
+      - ./provisioning/grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./provisioning/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      # Dashboard JSONs
+      - ./provisioning/grafana/dashboards:/var/lib/grafana/dashboards
+      # Persist Grafana’s DB so plugin & dashboards survive restarts
+#      - grafana-data:/var/lib/grafana
+
+volumes:
+  grafana-data:
