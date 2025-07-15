@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -Eeuo pipefail
+#set -Eeuo pipefail
 
 # Paths
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -7,11 +7,14 @@ FLASK_FILE="$ROOT/modified_serve.py"
 DASHBOARD_NAME="modified"  # Update this to your actual dashboard title if needed
 GRAFANA_PORT=3000
 FLASK_PORT=5000
-HOST_IP=$(grep host_ip ../user_config.ini | awk '{print $3}')  # Replace with your external IP or domain name
+HOST_IP=$(grep host_addr ../user_config.ini | awk '{print $3}')  # Replace with your external IP or domain name
 mongodb_uri=$(grep ip ../user_config.ini | awk '{print $3}')
-python_env=$(grep python_env_path config.ini | awk '{print $3}')
+python_env=$(grep python_env_path ../user_config.ini | awk '{print $3}')
+table=$(grep table ../user_config.ini | awk '{print $3}')
+db=$(grep db_name ../user_config.ini | awk '{print $3}')
 echo " Starting Flask server..."
-nohup "$python_env" -u "$FLASK_FILE" "${mongodb_uri}" > output.log &
+echo $FLASK_FILE $db $table
+nohup "$python_env" -u "$FLASK_FILE" "${mongodb_uri}" "$db" "$table" > /tmp/output.log &
 FLASK_PID=$!
 sleep 2  # Give Flask time to bind the port
 

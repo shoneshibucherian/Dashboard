@@ -4,14 +4,24 @@ import datetime
 import sys
 app = Flask(__name__)
 uri= sys.argv[1]
-print(f"uri is: {repr(uri)}", flush=True)
-print("uri is",uri)
-client = MongoClient(uri)
+print("=======================================")
+print("mongodb://admin:neepodapati@149.165.155.201:27017/admin"=="mongodb://"+uri)
+print("========================================")
+print("mongodb://"+uri)
+print("========================================")
+print("mongodb://admin:neepodapati@149.165.155.201:27017/admin")
+print("========================================")
+client = MongoClient("mongodb://"+uri)
+print("db  is",sys.argv[2])
+db = client[sys.argv[2]]
+print("table is ",sys.argv[3])
+collection = db[sys.argv[3]]
 
-db = client["real_INT_records"]
-
-collection = db["real_bursts"]
-
+try:
+    client.admin.command('ping')
+    print("Connected successfully to server")
+except Exception as e:
+    print("Server not available")
 
 def convert_time(time):
     print(type(time))
