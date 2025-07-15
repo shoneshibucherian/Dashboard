@@ -7,9 +7,9 @@ FLASK_FILE="$ROOT/modified_serve.py"
 DASHBOARD_NAME="modified"  # Update this to your actual dashboard title if needed
 GRAFANA_PORT=3000
 FLASK_PORT=5000
-HOST_IP=$(grep host_ip config.ini | awk '{print $3}')  # Replace with your external IP or domain name
-mongodb_uri=$(grep mongodb_uri config.ini | awk '{print $3}')
-python_env=$(grep python_env config.ini | awk '{print $3}')
+HOST_IP=$(grep host_ip ../user_config.ini | awk '{print $3}')  # Replace with your external IP or domain name
+mongodb_uri=$(grep ip ../user_config.ini | awk '{print $3}')
+python_env=$(grep python_env_path config.ini | awk '{print $3}')
 echo " Starting Flask server..."
 nohup "$python_env" -u "$FLASK_FILE" "${mongodb_uri}" > output.log &
 FLASK_PID=$!
