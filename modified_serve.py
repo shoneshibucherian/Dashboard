@@ -4,17 +4,8 @@ import datetime
 import sys
 app = Flask(__name__)
 uri= sys.argv[1]
-print("=======================================")
-print("mongodb://admin:neepodapati@149.165.155.201:27017/admin"=="mongodb://"+uri)
-print("========================================")
-print("mongodb://"+uri)
-print("========================================")
-print("mongodb://admin:neepodapati@149.165.155.201:27017/admin")
-print("========================================")
 client = MongoClient("mongodb://"+uri)
-print("db  is",sys.argv[2])
 db = client[sys.argv[2]]
-print("table is ",sys.argv[3])
 collection = db[sys.argv[3]]
 
 try:
