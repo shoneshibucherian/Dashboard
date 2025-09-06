@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 3,
   "links": [],
   "panels": [
     {
@@ -347,7 +347,7 @@
           }
         }
       ],
-      "title": "VLAN Vs Time",
+      "title": "Key Vs Time",
       "transformations": [
         {
           "disabled": true,
@@ -482,7 +482,7 @@
           }
         }
       ],
-      "title": "Key vs Time",
+      "title": "VLAN vs Time",
       "transformations": [
         {
           "disabled": true,
@@ -824,7 +824,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {},
