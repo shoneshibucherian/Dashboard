@@ -19,7 +19,7 @@ services:
       # Dashboard JSONs
       - ./provisioning/grafana/dashboards:/var/lib/grafana/dashboards
       # Persist Grafana’s DB so plugin & dashboards survive restarts
-#      - grafana-data:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
 
 volumes:
   grafana-data:
