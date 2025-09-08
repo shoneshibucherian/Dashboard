@@ -124,7 +124,7 @@ def mock_collection(monkeypatch):
             "mb_start_bw": 46.68,
             "max_bandwidth": 49.12,
             "ms_interval": 25,
-            "duration_sec": 0.075245,
+            "duration_sec": 0.0015245,
             "key": {
                 "switch": 262146,
                 "port": 17,
@@ -152,7 +152,7 @@ def mock_collection(monkeypatch):
             "mb_start_bw": 46.68,
             "max_bandwidth": 49.12,
             "ms_interval": 25,
-            "duration_sec": 3,
+            "duration_sec": 0.003254,
             "key": {
                 "switch": 262146,
                 "port": 17,
@@ -182,7 +182,7 @@ def mock_collection(monkeypatch):
         #(for key: should PASS filter (==0.1))
         {
             "timestamp": '2025-06-14T22:07:22.860590Z',
-            "duration_sec": 0.1,      # should PASS filter (==0.1)
+            "duration_sec": 0.001,      # should PASS filter (==0.1)
             "max_bandwidth": 10,
             "mb_start_bw": 40.00,
             "key": {"switch": 5555, "port": 5555, "queue": 5555, "vlan_id": 0}
@@ -238,7 +238,7 @@ def test_key_show_filters(client, mock_collection):
     #this checks if there is a docuement in the db with duration==0.1
     #if that is the case, then the key has to be=switch:5555, port:5555, queue:5555
     response_duration_eq_0_1 = client.get(
-        "/key_show?duration==0.1&from=1749045197072&max_band=&phy=All" \
+        "/key_show?duration==1&from=1749045197072&max_band=&phy=All" \
         "&time=1d&to=1756821197072&start_band=&vlan=All"      
     )
     assert response_duration_eq_0_1.status_code == 200
@@ -282,7 +282,7 @@ def test_vlan_show_filters(client, mock_collection):
 
     #this checks if there is a docuement in the db where duration=2
     response_duration_gt_3 = client.get(
-        "/vlan_show?duration=>2&from=1749045197072&max_band=&" \
+        "/vlan_show?duration=>3&from=1749045197072&max_band=&" \
         "phy=All&time=1d&to=1756821197072&start_band=&vlan=All"
     )
     assert response_duration_gt_3.status_code == 200

@@ -44,17 +44,15 @@ def extract_expression(data):
     # Extract the 'state' field from the incoming data
     if data is not None:
         if data.startswith('>='):
-            return {'$gte': float(data[2:])}
+            return {'$gte': (float(data[2:])/1000)}
         elif data.startswith('<='):
-            return {'$lte': float(data[2:])}
+            return {'$lte': (float(data[2:])/1000)}
         elif data.startswith('>'):
-            return {'$gt': float(data[1:])}
+            return {'$gt': (float(data[1:])/1000)}
         elif data.startswith('<'):
-            return {'$lt': float(data[1:])}
-        elif data.startswith('<='):
-            return {'$lte': float(data[2:])}
+            return {'$lt': (float(data[1:])/1000)}
         elif data.startswith('='):
-            return {'$eq': float(data[1:])}
+            return {'$eq': (float(data[1:])/1000)}
         else:
             # print("*"*12,data)
             return {'$gt': 0}

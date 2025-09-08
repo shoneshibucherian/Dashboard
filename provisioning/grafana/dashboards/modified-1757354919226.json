@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -688,36 +688,36 @@
     "list": [
       {
         "current": {
-          "text": "",
-          "value": ""
+          "text": ">40",
+          "value": ">40"
         },
-        "label": "Max Bandwidth",
+        "label": "Max Bandwidth (Gbps)",
         "name": "max_band",
         "options": [
           {
             "selected": true,
-            "text": "",
-            "value": ""
+            "text": ">40",
+            "value": ">40"
           }
         ],
-        "query": "",
+        "query": ">40",
         "type": "textbox"
       },
       {
         "current": {
-          "text": "",
-          "value": ""
+          "text": ">30",
+          "value": ">30"
         },
-        "label": "duration",
+        "label": "Duration (Milliseconds)",
         "name": "duration",
         "options": [
           {
             "selected": true,
-            "text": "",
-            "value": ""
+            "text": ">30",
+            "value": ">30"
           }
         ],
-        "query": "",
+        "query": ">30",
         "type": "textbox"
       },
       {
@@ -806,19 +806,19 @@
       },
       {
         "current": {
-          "text": "",
-          "value": ""
+          "text": ">30",
+          "value": ">30"
         },
-        "label": "Starting Bandwidth",
+        "label": "Starting Bandwidth (Gbps)",
         "name": "start_band",
         "options": [
           {
             "selected": true,
-            "text": "",
-            "value": ""
+            "text": ">30",
+            "value": ">30"
           }
         ],
-        "query": "",
+        "query": ">30",
         "type": "textbox"
       }
     ]
@@ -831,5 +831,5 @@
   "timezone": "UTC",
   "title": "modified",
   "uid": "modified",
-  "version": 2
+  "version": 4
 }
